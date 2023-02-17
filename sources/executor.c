@@ -19,20 +19,20 @@ static void	child(t_cmd *cmds, char **envp, int i)
 	g_data.error_flag = 0;
 	select_inout(cmds, i);
 	full_close(cmds);
-	if (is_builtin_fork(cmds[i].cmds))
+	if (is_builtin_fork(cmds[i].cmds))//se for fork builtin execute depois de free de exit
 	{
 		g_data.exit_status = builtin_run_fork(cmds[i].cmds);
 		break_free(&g_data);
 		free_cmds(cmds);
-		free_tokens(g_data.tokens);
 		exit(g_data.exit_status);
+		free_tokens(g_data.tokens);
 	}
 	if (cmds[i].cmds == NULL || cmds[i].path_cmd == NULL)
 	{
 		perror_handler("", cmds[i].cmds[0], 1, cmds);
 		return ;
 	}
-	if (execve(cmds[i].path_cmd, cmds[i].cmds, envp) == -1)
+	if (execve(cmds[i].path_cmd, cmds[i].cmds, envp) == -1) //execve vai executar os cmnd e matar o child
 	{
 		perror("minishell: execve");
 		return ;
@@ -54,7 +54,7 @@ static int	parent(t_cmd *cmds)
 			g_data.exit_status = WEXITSTATUS(status);
 		i++;
 	}
-	dup2(0, g_data.std_in_fd);
+	dup2(0, g_data.std_in_fd); // Restaura os fds originais
 	dup2(1, g_data.std_out_fd);
 	return (g_data.exit_status);
 }
@@ -63,7 +63,7 @@ int	run_builtin_unfork(t_cmd *cmds, char **envp, int i)
 {
 	if (is_builtin_unfork(cmds[i].cmds))
 	{
-		g_data.exit_status = builtin_run_unfork(cmds[i].cmds, envp);
+		g_data.exit_status = builtin_run_unfork(cmds[i].cmds, envp); //if o path não existe ou se nao for fork built in retorne erro
 		return (1);
 	}
 	return (0);
