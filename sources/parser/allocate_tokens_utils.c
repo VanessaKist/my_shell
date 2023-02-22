@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   allocate_tokens_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 22:10:14 by guribeir          #+#    #+#             */
-/*   Updated: 2023/01/24 21:00:18 by guribeir         ###   ########.fr       */
+/*   Created: 2023/02/22 21:28:40 by vkist-si          #+#    #+#             */
+/*   Updated: 2023/02/22 21:28:44 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etachott <etachott@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:48:47 by tkomeno           #+#    #+#             */
-/*   Updated: 2023/02/15 09:28:44 by etachott         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:22:41 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	check_return(char *str)
 {
 	if (ft_strlen(str) > 20)
 		return (0);
-	if (ft_strncmp(str, "-9223372036854775808", 21) == 0)
-		return (1);
 	while (*str)
 	{
 		if ((*str < '0' || *str > '9')

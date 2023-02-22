@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand_variables.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etachott <etachott@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 13:09:50 by etachott          #+#    #+#             */
-/*   Updated: 2023/02/15 16:08:12 by etachott         ###   ########.fr       */
+/*   Created: 2023/02/22 21:26:56 by vkist-si          #+#    #+#             */
+/*   Updated: 2023/02/22 21:26:59 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

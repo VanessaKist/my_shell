@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etachott <etachott@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 16:14:58 by guribeir          #+#    #+#             */
-/*   Updated: 2023/02/15 09:49:55 by etachott         ###   ########.fr       */
+/*   Created: 2023/02/22 22:07:35 by vkist-si          #+#    #+#             */
+/*   Updated: 2023/02/22 22:07:39 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ long long	ft_atoi_long(char *str)
 	sign = 1;
 	while (*str == 32 || (*str > 8 && *str < 14))
 		str++;
+	if (ft_strncmp(str, "-9223372036854775808", 21) == 0)
+		return (0);
 	if ((*str == 45) || (*str == 43))
 	{
 		if (*str == 45)

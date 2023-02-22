@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executor.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etachott < etachott@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 21:00:15 by guribeir          #+#    #+#             */
-/*   Updated: 2023/02/13 21:25:27 by etachott         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:21:27 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	child(t_cmd *cmds, char **envp, int i)
 	g_data.error_flag = 0;
 	select_inout(cmds, i);
 	full_close(cmds);
-	if (is_builtin_fork(cmds[i].cmds))//se for fork builtin execute depois de free de exit
+	if (is_builtin_fork(cmds[i].cmds))
 	{
 		g_data.exit_status = builtin_run_fork(cmds[i].cmds);
 		break_free(&g_data);
@@ -32,7 +32,7 @@ static void	child(t_cmd *cmds, char **envp, int i)
 		perror_handler("", cmds[i].cmds[0], 1, cmds);
 		return ;
 	}
-	if (execve(cmds[i].path_cmd, cmds[i].cmds, envp) == -1) //execve vai executar os cmnd e matar o child
+	if (execve(cmds[i].path_cmd, cmds[i].cmds, envp) == -1)
 	{
 		perror("minishell: execve");
 		return ;
@@ -54,7 +54,7 @@ static int	parent(t_cmd *cmds)
 			g_data.exit_status = WEXITSTATUS(status);
 		i++;
 	}
-	dup2(0, g_data.std_in_fd); // Restaura os fds originais
+	dup2(0, g_data.std_in_fd);
 	dup2(1, g_data.std_out_fd);
 	return (g_data.exit_status);
 }
@@ -63,7 +63,7 @@ int	run_builtin_unfork(t_cmd *cmds, char **envp, int i)
 {
 	if (is_builtin_unfork(cmds[i].cmds))
 	{
-		g_data.exit_status = builtin_run_unfork(cmds[i].cmds, envp); //if o path não existe ou se nao for fork built in retorne erro
+		g_data.exit_status = builtin_run_unfork(cmds[i].cmds, envp);
 		return (1);
 	}
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   allocate_tokens.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etachott <etachott@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 17:06:54 by tkomeno           #+#    #+#             */
-/*   Updated: 2023/02/08 11:11:48 by etachott         ###   ########.fr       */
+/*   Created: 2023/02/22 21:28:54 by vkist-si          #+#    #+#             */
+/*   Updated: 2023/02/22 21:28:57 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
