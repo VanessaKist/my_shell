@@ -19,10 +19,10 @@ long long	ft_atoi_long(char *str)
 
 	nbr = 0;
 	sign = 1;
-	while (*str == 32 || (*str > 8 && *str < 14))
-		str++;
 	if (ft_strncmp(str, "-9223372036854775808", 21) == 0)
 		return (0);
+	while (*str == 32 || (*str > 8 && *str < 14))
+		str++;
 	if ((*str == 45) || (*str == 43))
 	{
 		if (*str == 45)
@@ -33,7 +33,7 @@ long long	ft_atoi_long(char *str)
 	{
 		if (!ft_isdigit(*str))
 			return (0);
-		if (nbr > (LLONG_MAX - (*str - 48)) / 10 && sign == 1)
+		if (nbr > (LLONG_MAX - (*str - 48)) / 10)
 			exit_with_error("exit", "numeric argument required", 2);
 		nbr = (nbr * 10) + (*str - 48);
 		str++;
