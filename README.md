@@ -1,4 +1,4 @@
-# my_shell
+# My Shell
 
 This project is about creating a mini shell, a reduce version of the bash shell. Written in C.
 
